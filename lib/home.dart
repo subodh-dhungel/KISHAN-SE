@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kishan_se/Screens/signin.dart';
+import 'package:kishan_se/Screens/HomeScreen.dart';
 import 'package:kishan_se/widgets/k_appbar.dart';
 import 'package:kishan_se/widgets/k-drawer.dart';
 import 'package:kishan_se/widgets/k_search_bar.dart';
@@ -47,8 +47,7 @@ class _HomePageState extends State<HomePage> {
               onSearchPressed: _toggleSearch,
             ),
       drawer: const KDrawer(),
-      // body: const Center(child: Text('Home Page Body')),
-      body: const SigninPage(),
+      body: const HomeScreen(),
     );
   }
 }

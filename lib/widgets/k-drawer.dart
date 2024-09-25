@@ -26,7 +26,7 @@ class KDrawer extends StatelessWidget {
             title: const Text('Home'),
             onTap: () {
               Navigator.pop(context);
-              // Navigate to home or any other action
+              // Navigate to home
             },
           ),
           ListTile(
@@ -34,7 +34,7 @@ class KDrawer extends StatelessWidget {
             title: const Text('Profile'),
             onTap: () {
               Navigator.pop(context);
-              // Navigate to profile or any other action
+              // Navigate to profile
             },
           ),
           ListTile(
@@ -42,7 +42,7 @@ class KDrawer extends StatelessWidget {
             title: const Text('Settings'),
             onTap: () {
               Navigator.pop(context);
-              // Navigate to settings or any other action
+              // Navigate to settings
             },
           ),
           ListTile(
@@ -50,7 +50,7 @@ class KDrawer extends StatelessWidget {
             title: const Text('Logout'),
             onTap: () {
               Navigator.pop(context);
-              // Log out or any other action
+              // Log out
             },
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kishan_se/Screens/cartScreen.dart';
 import 'package:kishan_se/helperFunctions/get_user_location.dart';
 
 class KAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -71,7 +72,10 @@ class _KAppBarState extends State<KAppBar> {
           children: [
             IconButton(
               onPressed: () {
-                // Handle cart icon press
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartScreen()),
+                );
               },
               icon: const Icon(Icons.shopping_cart_rounded),
             ),
