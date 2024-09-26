@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kishan_se/Screens/HomeScreen.dart';
+import 'package:kishan_se/helperFunctions/SearchState.dart';
 import 'package:kishan_se/helperFunctions/cart.dart';
-import 'package:kishan_se/widgets/k_appbar.dart';
 import 'package:kishan_se/widgets/k-drawer.dart';
+import 'package:kishan_se/widgets/k_appbar.dart';
 import 'package:kishan_se/widgets/product_grid.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,7 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late TextEditingController _searchController;
-  bool _isSearching = false;
+  final bool _isSearching = false;
   String? _lastSearchTerm;
 
   @override
@@ -39,8 +40,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final searchState = Provider.of<Searchstate>(context);
     return Scaffold(
-      appBar: KAppBar(onSearchPressed: ()=>{}),
+      appBar: KAppBar(onSearchPressed: searchState.toggleSearchBar),
       drawer: const KDrawer(),
       body: _isSearching
           ? _buildSearchResults()

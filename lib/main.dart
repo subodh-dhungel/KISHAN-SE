@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:kishan_se/Screens/splash_screen.dart';
 import 'package:kishan_se/helperFunctions/cart.dart';
-import 'package:kishan_se/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
+import 'helperFunctions/SearchState.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,8 +15,11 @@ void main() async{
   );
 
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => Cart(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context)=> Cart()),
+        ChangeNotifierProvider(create: (context)=> Searchstate()),
+      ],
       child: const MyApp(),
     )
   );
@@ -33,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage()
+      home: SplashScreen()
     );
   }
 }

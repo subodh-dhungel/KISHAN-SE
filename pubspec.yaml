@@ -63,6 +63,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/logo/
+    - assets/SplashScreen.jpg
  
   uses-material-design: true
 
