@@ -1,31 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:kishan_se/helperFunctions/cart.dart';
 import 'package:kishan_se/widgets/product_grid.dart';
+import 'package:provider/provider.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
   Widget build(BuildContext context) {
+    final products = Provider.of<Cart>(context).items;
+    
     return Scaffold(
-        body: Column(
-        children: [
-        SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: 30,
-          child: const Center(
-            child: Text("Welcome User!"),
-          ),
-        ),
-        
-        const Expanded(
-          child: ProductGrid(),
-        )
-      ],
-    ));
+      body: ProductGrid(products: products),
+    );
   }
 }

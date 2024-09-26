@@ -18,7 +18,7 @@ class ProductItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Product Image
             Expanded(
@@ -41,14 +41,10 @@ class ProductItem extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 8.0, horizontal: 5.0),
+                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5.0),
                   child: Text(
                     product.price,
-                    style: const TextStyle(
-                      color: Colors.green,
-                      fontSize: 14,
-                    ),
+                    style: const TextStyle(color: Colors.green, fontSize: 14),
                   ),
                 ),
                 const Spacer(), // This will push the cart icon to the right

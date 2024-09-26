@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:kishan_se/Screens/HomeScreen.dart';
+import 'package:kishan_se/helperFunctions/cart.dart';
 import 'package:kishan_se/widgets/k_appbar.dart';
 import 'package:kishan_se/widgets/k-drawer.dart';
-import 'package:kishan_se/widgets/k_search_bar.dart';
+import 'package:kishan_se/widgets/product_grid.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,11 +17,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late TextEditingController _searchController;
   bool _isSearching = false;
+  String? _lastSearchTerm;
 
   @override
   void initState() {
     super.initState();
     _searchController = TextEditingController();
+    _loadLastSearchTerm();
   }
 
   @override
@@ -27,27 +32,33 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  void _toggleSearch() {
-    setState(() {
-      _isSearching = !_isSearching;
-    });
+  Future<String?> _loadLastSearchTerm() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('last_search_term');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _isSearching
-          ? AppBar(
-              title: KSearchBar(
-                controller: _searchController,
-                onClose: _toggleSearch,
-              ),
-            )
-          : KAppBar(
-              onSearchPressed: _toggleSearch,
-            ),
+      appBar: KAppBar(onSearchPressed: ()=>{}),
       drawer: const KDrawer(),
-      body: const HomeScreen(),
+      body: _isSearching
+          ? _buildSearchResults()
+          : const HomeScreen(),
     );
+  }
+
+  Widget _buildSearchResults() {
+    final products = Provider.of<Cart>(context, listen: false).items;
+    final filteredProducts = products.where((product) {
+      String searchTerm = _lastSearchTerm ?? '';
+      return product.name.toLowerCase().contains(searchTerm.toLowerCase());
+    }).toList();
+
+    if (filteredProducts.isNotEmpty) {
+      return ProductGrid(products: filteredProducts);
+    } else {
+      return const Center(child: Text('No matching products found'));
+    }
   }
 }

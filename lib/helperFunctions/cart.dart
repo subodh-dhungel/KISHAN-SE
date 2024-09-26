@@ -13,7 +13,7 @@ class Cart extends ChangeNotifier {
 
   void removeProduct(Product product) {
     _items.remove(product);
-    notifyListeners(); 
+    notifyListeners();
   }
 
   double get totalPrice {
