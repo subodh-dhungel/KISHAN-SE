@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kishan_se/Screens/HomeScreen.dart';
-import 'package:kishan_se/helperFunctions/SearchState.dart';
+import 'package:kishan_se/Screens/home_screen.dart';
+import 'package:kishan_se/helperFunctions/search_state.dart';
 import 'package:kishan_se/helperFunctions/cart.dart';
-import 'package:kishan_se/widgets/k-drawer.dart';
+import 'package:kishan_se/widgets/k_drawer.dart';
 import 'package:kishan_se/widgets/k_appbar.dart';
 import 'package:kishan_se/widgets/product_grid.dart';
 import 'package:provider/provider.dart';

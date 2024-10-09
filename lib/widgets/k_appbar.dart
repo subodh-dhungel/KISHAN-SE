@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kishan_se/Screens/cartScreen.dart';
+import 'package:kishan_se/Screens/cart_screen.dart';
+import 'package:kishan_se/helperFunctions/cart.dart';
 import 'package:kishan_se/helperFunctions/get_user_location.dart';
+import 'package:provider/provider.dart';
 
 class KAppBar extends StatefulWidget implements PreferredSizeWidget {
   final VoidCallback onSearchPressed;
@@ -11,10 +13,10 @@ class KAppBar extends StatefulWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(60);
 
   @override
-  _KAppBarState createState() => _KAppBarState();
+  KAppBarState createState() => KAppBarState();
 }
 
-class _KAppBarState extends State<KAppBar> {
+class KAppBarState extends State<KAppBar> {
   String location = 'Loading...';
 
   @override
@@ -38,6 +40,7 @@ class _KAppBarState extends State<KAppBar> {
 
   @override
   Widget build(BuildContext context) {
+    final cartItems = Provider.of<Cart>(context).items.length.toString();
     return AppBar(
       backgroundColor: const Color.fromARGB(80, 255, 255, 255),
       leading: Builder(
@@ -74,7 +77,7 @@ class _KAppBarState extends State<KAppBar> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CartScreen()),
+                  MaterialPageRoute(builder: (context) => const CartScreen()),
                 );
               },
               icon: const Icon(Icons.shopping_cart_rounded),
@@ -92,9 +95,9 @@ class _KAppBarState extends State<KAppBar> {
                   minWidth: 16,
                   minHeight: 16,
                 ),
-                child: const Text(
-                  '3',
-                  style: TextStyle(
+                child: Text(
+                  cartItems,
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 10,
                   ),

@@ -1,20 +1,47 @@
-import 'package:flutter/material.dart';
-import 'package:kishan_se/Screens/HomeScreen.dart';
+import 'dart:async';
 
-class SplashScreen extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:kishan_se/Screens/home_screen.dart';
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  SplashScreenState createState() => SplashScreenState();
+}
+
+class SplashScreenState extends State<SplashScreen> {
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _startTimer();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  void _startTimer() {
+    _timer = Timer(const Duration(seconds: 10), () {
+      _navigateToHomeScreen();
+    });
+  }
+
+  void _navigateToHomeScreen() {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) => const HomeScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Simulate a delay for the splash screen
-    Future.delayed(const Duration(seconds: 20), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
-    });
-
     return Scaffold(
       body: Stack(
         children: [
-          // Full-screen image
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(

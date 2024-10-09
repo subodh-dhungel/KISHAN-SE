@@ -41,52 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCOQA2U46jgvuOpGPXwigMQPsmIPYLekqM',
-    appId: '1:1053006835682:web:dcedcb2381c06d3fbfd3bb',
-    messagingSenderId: '1053006835682',
-    projectId: 'kisan-4074a',
-    authDomain: 'kisan-4074a.firebaseapp.com',
-    storageBucket: 'kisan-4074a.appspot.com',
-    measurementId: 'G-TMD76TNHDV',
+    apiKey: 'AIzaSyB7emNY4ARdGumQGF7EiSty1kezIxPg5uo',
+    appId: '1:637357029596:web:3461e336bcf8d587679c19',
+    messagingSenderId: '637357029596',
+    projectId: 'agro-baba',
+    authDomain: 'agro-baba.firebaseapp.com',
+    storageBucket: 'agro-baba.appspot.com',
+    measurementId: 'G-W7GJ64EG3Y',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAJnxojXPlgVM6uFoiRZAcOINLLpMz3IK8',
-    appId: '1:1053006835682:android:91d2387624053b12bfd3bb',
-    messagingSenderId: '1053006835682',
-    projectId: 'kisan-4074a',
-    storageBucket: 'kisan-4074a.appspot.com',
+    apiKey: 'AIzaSyBrMHyw6TXqdwK9Wda4TyYJ1H7xUIvMdZw',
+    appId: '1:637357029596:android:e4bd2e3e69687e39679c19',
+    messagingSenderId: '637357029596',
+    projectId: 'agro-baba',
+    storageBucket: 'agro-baba.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC94WrlUv9vnpnra_X6-b5kzqsEXt-AJ4M',
-    appId: '1:1053006835682:ios:41fed55df50be2edbfd3bb',
-    messagingSenderId: '1053006835682',
-    projectId: 'kisan-4074a',
-    storageBucket: 'kisan-4074a.appspot.com',
-    androidClientId: '1053006835682-sfgvmnbnj8q6h7r3mamjbqsrvti9rk3a.apps.googleusercontent.com',
-    iosClientId: '1053006835682-ed5hrgt7tss53c0h156mnaphfu2v66gi.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCwC3qIBxzGH-lqDr_OPXvPMq3-WvOJZtw',
+    appId: '1:637357029596:ios:42c1c9b75e859ae8679c19',
+    messagingSenderId: '637357029596',
+    projectId: 'agro-baba',
+    storageBucket: 'agro-baba.appspot.com',
     iosBundleId: 'com.example.kishanSe',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC94WrlUv9vnpnra_X6-b5kzqsEXt-AJ4M',
-    appId: '1:1053006835682:ios:41fed55df50be2edbfd3bb',
-    messagingSenderId: '1053006835682',
-    projectId: 'kisan-4074a',
-    storageBucket: 'kisan-4074a.appspot.com',
-    androidClientId: '1053006835682-sfgvmnbnj8q6h7r3mamjbqsrvti9rk3a.apps.googleusercontent.com',
-    iosClientId: '1053006835682-ed5hrgt7tss53c0h156mnaphfu2v66gi.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCwC3qIBxzGH-lqDr_OPXvPMq3-WvOJZtw',
+    appId: '1:637357029596:ios:42c1c9b75e859ae8679c19',
+    messagingSenderId: '637357029596',
+    projectId: 'agro-baba',
+    storageBucket: 'agro-baba.appspot.com',
     iosBundleId: 'com.example.kishanSe',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCOQA2U46jgvuOpGPXwigMQPsmIPYLekqM',
-    appId: '1:1053006835682:web:4344c43159244438bfd3bb',
-    messagingSenderId: '1053006835682',
-    projectId: 'kisan-4074a',
-    authDomain: 'kisan-4074a.firebaseapp.com',
-    storageBucket: 'kisan-4074a.appspot.com',
-    measurementId: 'G-HTQ7NYR6F1',
+    apiKey: 'AIzaSyB7emNY4ARdGumQGF7EiSty1kezIxPg5uo',
+    appId: '1:637357029596:web:2a65c02183f5d561679c19',
+    messagingSenderId: '637357029596',
+    projectId: 'agro-baba',
+    authDomain: 'agro-baba.firebaseapp.com',
+    storageBucket: 'agro-baba.appspot.com',
+    measurementId: 'G-WQYHCEZ6WQ',
   );
+
 }

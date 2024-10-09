@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kishan_se/helperFunctions/SearchState.dart';
+import 'package:kishan_se/helperFunctions/search_state.dart';
 import 'package:kishan_se/helperFunctions/products.dart';
 import 'package:kishan_se/widgets/product_item.dart';
 import 'package:provider/provider.dart';

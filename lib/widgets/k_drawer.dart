@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:kishan_se/Screens/signin.dart';
+import 'package:kishan_se/firebase/auth_service.dart';
 
 class KDrawer extends StatelessWidget {
   const KDrawer({super.key});
+
+  Future<void> _navigateToSignInPage(BuildContext context) async {
+    Navigator.push(
+      context, MaterialPageRoute(builder: (context) => const SigninPage())
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +33,6 @@ class KDrawer extends StatelessWidget {
             leading: const Icon(Icons.home),
             title: const Text('Home'),
             onTap: () {
-              Navigator.pop(context);
               // Navigate to home
             },
           ),
@@ -33,7 +40,6 @@ class KDrawer extends StatelessWidget {
             leading: const Icon(Icons.person),
             title: const Text('Profile'),
             onTap: () {
-              Navigator.pop(context);
               // Navigate to profile
             },
           ),
@@ -41,15 +47,16 @@ class KDrawer extends StatelessWidget {
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () {
-              Navigator.pop(context);
               // Navigate to settings
             },
           ),
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('Logout'),
-            onTap: () {
-              Navigator.pop(context);
+            onTap: () async {
+              AuthService authservice = AuthService();
+              await authservice.signOut();
+              await _navigateToSignInPage(context);
               // Log out
             },
           ),

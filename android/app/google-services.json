@@ -1,123 +1,26 @@
 {
   "project_info": {
-    "project_number": "1053006835682",
-    "project_id": "kisan-4074a",
-    "storage_bucket": "kisan-4074a.appspot.com"
+    "project_number": "637357029596",
+    "project_id": "agro-baba",
+    "storage_bucket": "agro-baba.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1053006835682:android:3ed245d1e5c307b7bfd3bb",
-        "android_client_info": {
-          "package_name": "com.example.kisan_se_flutter"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1053006835682-jr0p8s0gtlubrasq1iomopbbu9u3ps4t.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAJnxojXPlgVM6uFoiRZAcOINLLpMz3IK8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1053006835682-jr0p8s0gtlubrasq1iomopbbu9u3ps4t.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1053006835682-ed5hrgt7tss53c0h156mnaphfu2v66gi.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.kishanSe"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1053006835682:android:91d2387624053b12bfd3bb",
+        "mobilesdk_app_id": "1:637357029596:android:e4bd2e3e69687e39679c19",
         "android_client_info": {
           "package_name": "com.example.kishan_se"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "1053006835682-sfgvmnbnj8q6h7r3mamjbqsrvti9rk3a.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.kishan_se",
-            "certificate_hash": "5b9be834cd67bd6a98a28f47948370e6965b4dc0"
-          }
-        },
-        {
-          "client_id": "1053006835682-jr0p8s0gtlubrasq1iomopbbu9u3ps4t.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAJnxojXPlgVM6uFoiRZAcOINLLpMz3IK8"
+          "current_key": "AIzaSyBrMHyw6TXqdwK9Wda4TyYJ1H7xUIvMdZw"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1053006835682-jr0p8s0gtlubrasq1iomopbbu9u3ps4t.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1053006835682-ed5hrgt7tss53c0h156mnaphfu2v66gi.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.kishanSe"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1053006835682:android:a7d3c4068d3b6eb1bfd3bb",
-        "android_client_info": {
-          "package_name": "com.example.kishan_se_flutter"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1053006835682-jr0p8s0gtlubrasq1iomopbbu9u3ps4t.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAJnxojXPlgVM6uFoiRZAcOINLLpMz3IK8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1053006835682-jr0p8s0gtlubrasq1iomopbbu9u3ps4t.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1053006835682-ed5hrgt7tss53c0h156mnaphfu2v66gi.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.kishanSe"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

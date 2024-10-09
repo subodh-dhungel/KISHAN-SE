@@ -4,5 +4,10 @@ class Product {
   final String imageUrl;
   final int quantity;
 
-  Product({required this.name, required this.price, required this.imageUrl, this.quantity = 1});
+  Product({
+    required this.name,
+    required this.price,
+    required this.imageUrl,
+    this.quantity = 1
+  });
 }
