@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kishan_se/Screens/product_details.dart';
 import 'package:kishan_se/helperFunctions/cart.dart';
 import 'package:kishan_se/helperFunctions/products.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,15 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => {},
+      onTap: () {
+        // Navigate to the ProductDetailsScreen and pass the selected product
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProductDetailsScreen(product: product),
+          ),
+        );
+      },
       child: Card(
         elevation: 3,
         shape: RoundedRectangleBorder(
@@ -43,11 +52,11 @@ class ProductItem extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5.0),
                   child: Text(
-                    product.price,
+                    '\$${product.price}',
                     style: const TextStyle(color: Colors.green, fontSize: 14),
                   ),
                 ),
-                const Spacer(), // This will push the cart icon to the right
+                const Spacer(),
                 IconButton(
                   onPressed: () => {
                     Provider.of<Cart>(context, listen: false).addProduct(product)

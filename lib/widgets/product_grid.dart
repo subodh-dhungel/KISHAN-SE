@@ -5,49 +5,113 @@ import 'package:kishan_se/widgets/product_item.dart';
 import 'package:provider/provider.dart';
 
 class ProductGrid extends StatefulWidget {
+  //dummy data
   final List<Product> products = [
     Product(
         name: 'Product 1',
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo lacus, consequat a blandit id, commodo rhoncus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra metus purus, porttitor lobortis ligula eleifend vel. Morbi in leo commodo, eleifend quam a, efficitur arcu. Fusce vel ornare velit. Curabitur a gravida ipsum, eu iaculis tortor. Fusce ex neque, venenatis quis mi in, ornare varius orci.",
+        images: [
+          'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg',
+          'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg',
+          'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'
+        ],
         price: '\$100',
         imageUrl:
             'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg'),
     Product(
         name: 'Product 2',
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo lacus, consequat a blandit id, commodo rhoncus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra metus purus, porttitor lobortis ligula eleifend vel. Morbi in leo commodo, eleifend quam a, efficitur arcu. Fusce vel ornare velit. Curabitur a gravida ipsum, eu iaculis tortor. Fusce ex neque, venenatis quis mi in, ornare varius orci.",
+        images: [
+          'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg',
+          'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg',
+          'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'
+        ],
         price: '\$150',
         imageUrl:
             'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg'),
     Product(
         name: 'Product 3',
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo lacus, consequat a blandit id, commodo rhoncus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra metus purus, porttitor lobortis ligula eleifend vel. Morbi in leo commodo, eleifend quam a, efficitur arcu. Fusce vel ornare velit. Curabitur a gravida ipsum, eu iaculis tortor. Fusce ex neque, venenatis quis mi in, ornare varius orci.",
+        images: [
+          'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg',
+          'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg',
+          'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'
+        ],
         price: '\$200',
         imageUrl:
             'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'),
     Product(
         name: 'Product 4',
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo lacus, consequat a blandit id, commodo rhoncus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra metus purus, porttitor lobortis ligula eleifend vel. Morbi in leo commodo, eleifend quam a, efficitur arcu. Fusce vel ornare velit. Curabitur a gravida ipsum, eu iaculis tortor. Fusce ex neque, venenatis quis mi in, ornare varius orci.",
+        images: [
+          'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg',
+          'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg',
+          'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'
+        ],
         price: '\$250',
         imageUrl:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGOtt8x0sIEfCe6uqeB9m7u3RInOnsphzSQ&s'),
     Product(
         name: 'Product 5',
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo lacus, consequat a blandit id, commodo rhoncus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra metus purus, porttitor lobortis ligula eleifend vel. Morbi in leo commodo, eleifend quam a, efficitur arcu. Fusce vel ornare velit. Curabitur a gravida ipsum, eu iaculis tortor. Fusce ex neque, venenatis quis mi in, ornare varius orci.",
+        images: [
+          'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg',
+          'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg',
+          'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'
+        ],
         price: '\$100',
         imageUrl:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVoPw7CNdMY33fuV4zWmTSUxttbQT3UizD2A&s'),
     Product(
         name: 'Product 6',
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo lacus, consequat a blandit id, commodo rhoncus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra metus purus, porttitor lobortis ligula eleifend vel. Morbi in leo commodo, eleifend quam a, efficitur arcu. Fusce vel ornare velit. Curabitur a gravida ipsum, eu iaculis tortor. Fusce ex neque, venenatis quis mi in, ornare varius orci.",
+        images: [
+          'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg',
+          'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg',
+          'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'
+        ],
         price: '\$150',
         imageUrl:
             'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg'),
     Product(
         name: 'Product 7',
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo lacus, consequat a blandit id, commodo rhoncus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra metus purus, porttitor lobortis ligula eleifend vel. Morbi in leo commodo, eleifend quam a, efficitur arcu. Fusce vel ornare velit. Curabitur a gravida ipsum, eu iaculis tortor. Fusce ex neque, venenatis quis mi in, ornare varius orci.",
+        images: [
+          'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg',
+          'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg',
+          'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'
+        ],
         price: '\$200',
         imageUrl:
             'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg'),
     Product(
         name: 'Product 8',
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo lacus, consequat a blandit id, commodo rhoncus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra metus purus, porttitor lobortis ligula eleifend vel. Morbi in leo commodo, eleifend quam a, efficitur arcu. Fusce vel ornare velit. Curabitur a gravida ipsum, eu iaculis tortor. Fusce ex neque, venenatis quis mi in, ornare varius orci.",
+        images: [
+          'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg',
+          'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg',
+          'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'
+        ],
         price: '\$100',
         imageUrl:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGOtt8x0sIEfCe6uqeB9m7u3RInOnsphzSQ&s'),
     Product(
         name: 'Product 9',
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo lacus, consequat a blandit id, commodo rhoncus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra metus purus, porttitor lobortis ligula eleifend vel. Morbi in leo commodo, eleifend quam a, efficitur arcu. Fusce vel ornare velit. Curabitur a gravida ipsum, eu iaculis tortor. Fusce ex neque, venenatis quis mi in, ornare varius orci.",
+        images: [
+          'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg',
+          'https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg',
+          'https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/04/chickpeas_closeup_1296x728_header-1024x575.jpg?w=1155&h=1528'
+        ],
         price: '\$150',
         imageUrl:
             'https://thenewbaguette.com/wp-content/uploads/2022/04/how-to-cook-dried-beans.jpg'),
