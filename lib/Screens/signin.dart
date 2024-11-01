@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:kishan_se/Screens/home_screen.dart';
+import 'package:kishan_se/Screens/customer_screen/home_screen.dart';
 import 'package:kishan_se/firebase/auth_service.dart';
 import 'package:kishan_se/widgets/login_button.dart';
 import 'package:kishan_se/widgets/sign_in_failed_dialog.dart';
@@ -35,22 +35,24 @@ class _SigninPageState extends State<SigninPage> {
               onPressed: () async {
                 try {
                   final User? user = await authService.signInWithGoogle();
-                  if (user != null) {
+                  if (user != null && context.mounted) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const HomeScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()),
                     );
                   }
                 } catch (e) {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return SignInFailedDialog(onRetry: () {
-                        authService.signInWithGoogle();
-                      });
-                    },
-                  );
-                  rethrow;
+                  if (context.mounted) {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return SignInFailedDialog(onRetry: () {
+                          authService.signInWithGoogle();
+                        });
+                      },
+                    );
+                  }
                 }
               },
             ),

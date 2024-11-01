@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kishan_se/Screens/customer_screen/profile_screen.dart';
 import 'package:kishan_se/Screens/signin.dart';
 import 'package:kishan_se/firebase/auth_service.dart';
 
@@ -40,7 +41,7 @@ class KDrawer extends StatelessWidget {
             leading: const Icon(Icons.person),
             title: const Text('Profile'),
             onTap: () {
-              // Navigate to profile
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfilePage()));
             },
           ),
           ListTile(
@@ -56,7 +57,9 @@ class KDrawer extends StatelessWidget {
             onTap: () async {
               AuthService authservice = AuthService();
               await authservice.signOut();
-              await _navigateToSignInPage(context);
+              if(context.mounted){
+                await _navigateToSignInPage(context);
+              }
               // Log out
             },
           ),
