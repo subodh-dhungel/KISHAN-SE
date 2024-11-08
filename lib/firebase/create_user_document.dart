@@ -15,7 +15,7 @@ Future<void> createUserDocument(User user) async {
       'email': user.email,
       'displayName': user.displayName,
       'photoURL': user.photoURL,
-      'role': userRole.role,
+      'role': userRole.isFarmer,
       'createdAt': FieldValue.serverTimestamp(),
     });
   }

@@ -1,21 +1,26 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:kishan_se/helperFunctions/user_role.dart';
+import 'package:provider/provider.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final UserRole userRole = Provider.of<UserRole>(context);
+    
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
         actions: [
-          Icon(Icons.more_vert), // For additional actions or settings
+          Icon(Icons.more_vert),
         ],
       ),
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [
-          _buildProfileInfo(),
+          _buildProfileInfo(userRole),
           SizedBox(height: 30),
           _buildOrderSummary(),
           SizedBox(height: 50),
@@ -25,23 +30,23 @@ class ProfilePage extends StatelessWidget {
   }
 
   // Profile Info Section
-  Widget _buildProfileInfo() {
+  Widget _buildProfileInfo(UserRole userRole) {
     return Row(
       children: [
         CircleAvatar(
           radius: 40,
-          backgroundImage: NetworkImage('https://example.com/profile-pic.jpg'),
+          backgroundImage: NetworkImage('${FirebaseAuth.instance.currentUser?.photoURL}'),
         ),
         SizedBox(width: 16),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'suvodh dhungyell',
+              '${FirebaseAuth.instance.currentUser?.displayName}',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             SizedBox(height: 8),
-            Text('Account type: customer'),
+            Text('Account type: ${userRole.isFarmer ? 'Farmer' : 'Customer'}'),
           ],
         ),
         Spacer(),

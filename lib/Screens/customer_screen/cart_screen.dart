@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kishan_se/Screens/product_details.dart';
+import 'package:kishan_se/Screens/customer_screen/product_details.dart';
 import 'package:kishan_se/helperFunctions/cart.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +27,7 @@ class CartScreen extends StatelessWidget {
                         onTap: ()=> Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context)=>ProductDetailsScreen(product: product)
+                            builder: (context)=> ProductDetailsScreen(product: product)
                             )
                           ),
                         leading: Image.network(product.imageUrl, width: 50, height: 50),

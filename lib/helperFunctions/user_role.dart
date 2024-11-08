@@ -1,10 +1,12 @@
-// ignore_for_file: unnecessary_getters_setters
+import 'package:flutter/foundation.dart';
 
-class UserRole {
-  late String _role;
-  String get role => _role;
+class UserRole extends ChangeNotifier{
+  bool _isFarmer = false;
 
-  set role(String newRole) {
-    _role = newRole;
+  bool get isFarmer => _isFarmer;
+
+  void toggleIsFarmer() {
+    _isFarmer = !_isFarmer;
+    notifyListeners();
   }
 }

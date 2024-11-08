@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kishan_se/Screens/splash_screen.dart';
 import 'package:kishan_se/helperFunctions/cart.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:kishan_se/helperFunctions/user_role.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 import 'helperFunctions/search_state.dart';
@@ -19,6 +20,7 @@ void main() async{
       providers: [
         ChangeNotifierProvider(create: (context)=> Cart()),
         ChangeNotifierProvider(create: (context)=> Searchstate()),
+        ChangeNotifierProvider(create: (_)=> UserRole())
       ],
       child: const MyApp(),
     )

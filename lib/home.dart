@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kishan_se/Screens/home_screen.dart';
+import 'package:kishan_se/Screens/customer_screen/home_screen.dart';
 import 'package:kishan_se/helperFunctions/search_state.dart';
 import 'package:kishan_se/helperFunctions/cart.dart';
 import 'package:kishan_se/widgets/k_drawer.dart';
